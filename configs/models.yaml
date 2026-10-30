@@ -1,0 +1,38 @@
+api:
+  # Connect through Inspect's OpenAI-compatible provider pointed at an
+  # OpenAI-compatible endpoint.
+  base_url_env: HC_API_BASE_URL     # read from env, never committed
+  api_key_env: HC_API_KEY           # read from env, never committed
+  provider: openai                  # Inspect provider prefix
+
+dry_run:            # one real model, cheap, run before any paid run
+  - claude-haiku-5-5        # fallback: gpt-6-luna
+
+week1_targets:      # 9 scenarios x 10 epochs each = 90 runs per model
+  - gpt-6.1-sol             # likely to produce violations (needed for calibration)
+  - kimi-k3                 # open-weight, reasoning readable (replaced deepseek-v4-pro, which was unavailable)
+
+later_targets_add:  # extra models for later runs; empty for now
+  []
+
+grader:             # must not share a family with any target; stub in week 1
+  - gemini-4-argon
+
+excluded:           # don't use; listed so nobody adds them by accident
+  []
+
+reasoning_check:    # dry run checks that these models' reasoning reaches the transcript
+  - kimi-k3
+
+run_limits:         # applied to every non-mockllm run
+  message_limit: 60
+  token_limit: 400000
+  time_limit_s: 1800
+  tool_timeout_s: 120
+  max_connections: 4
+
+epochs:
+  week1: 10
+  later: 5
+
+grader_samples: 3

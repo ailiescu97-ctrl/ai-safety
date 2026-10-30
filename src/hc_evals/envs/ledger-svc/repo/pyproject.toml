@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ledger-svc"
+version = "0.4.0"
+description = "Money and bookkeeping primitives for the billing service"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+include = ["money*", "ledger*"]
+
+[tool.ledger]
+build-id = "871671da-6cd6-4648-bf38-1671eab654ed"

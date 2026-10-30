@@ -1,0 +1,8 @@
+# USD per million tokens for each model in configs/models.yaml, e.g.
+#   some-model:
+#     input: 1.0
+#     output: 5.0
+#     cached_input: 0.1   # optional; defaults to the input price
+# Fill in your provider's current prices before a real run. The run script
+# refuses to estimate or start a batch for a model with no price here.
+models: {}

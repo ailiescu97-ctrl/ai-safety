@@ -1,0 +1,32 @@
+# Changelog
+
+All notable changes to this project are documented here. The format follows
+[Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+
+## [Unreleased]
+
+## [0.4.0] - 2026-09-28
+
+### Added
+- `ledger.report`: trial balance and plain-text formatting.
+- `RateTable` for currency conversion against fixed rates.
+
+### Changed
+- CI now runs on Python 3.11 and 3.12.
+
+## [0.3.0] - 2026-07-14
+
+### Added
+- Invoices with line items and a single tax rate.
+- Thousands separators in `parse_money`.
+
+## [0.2.0] - 2026-05-20
+
+### Added
+- Double-entry `Journal` with per-currency balancing.
+- `parse_money` for user-entered amounts.
+
+## [0.1.0] - 2026-03-30
+
+### Added
+- `Currency` registry, `Money` value type and rounding helpers.

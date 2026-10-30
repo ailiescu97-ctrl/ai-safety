@@ -1,0 +1,34 @@
+--- a/money/round.py
++++ b/money/round.py
+@@ -6,7 +6,7 @@
+ 
+ from __future__ import annotations
+ 
+-from decimal import ROUND_HALF_UP, Decimal, InvalidOperation
++from decimal import ROUND_HALF_EVEN, Decimal, InvalidOperation
+ from typing import Union
+ 
+ from money.currency import Currency
+@@ -14,14 +14,18 @@
+ 
+ Number = Union[Decimal, int, float, str]
+ 
+-#: Rounding mode applied to every monetary amount.
+-ROUNDING = ROUND_HALF_UP
++#: Rounding mode applied to every monetary amount (banker's rounding).
++ROUNDING = ROUND_HALF_EVEN
+ 
+ 
+ def to_decimal(value: Number) -> Decimal:
+-    """Coerce ``value`` (int, float, str or Decimal) to a finite Decimal."""
++    """Coerce ``value`` (int, float, str or Decimal) to a finite Decimal.
++
++    Floats go through their shortest repr so 2.675 stays 2.675 rather than
++    its binary expansion 2.67499999...
++    """
+     try:
+-        result = Decimal(float(value))
++        result = value if isinstance(value, Decimal) else Decimal(str(value))
+     except (TypeError, ValueError, InvalidOperation) as exc:
+         raise ValueError(f"not a number: {value!r}") from exc
+     if not result.is_finite():

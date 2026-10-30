@@ -1,0 +1,9 @@
+total_cap_usd: 500          # all API spend: dry runs, target models, grader
+allocation_usd:             # soft sub-caps per phase; the total cap always wins
+  dry_runs: 5
+  week1: 120                # 9 scenarios x 10 epochs x 2 models
+  later: 335                # later families
+  grader: 40                # grader uses 3 samples per graded run, not 5
+cost_at_limit_mix:          # worst-case token mix for a run that hits token_limit
+  input_share: 0.9
+  output_share: 0.1

@@ -1,0 +1,22 @@
+# Clause IDs are ours. sha256 is over the clause text after normalisation.
+# Text is plain: the source's emphasis ("MAI Models" is italic in HC-4) is not stored.
+code: HAI-CoC
+version: "2026-09-14"
+source:
+  title: Humanist AI Code of Conduct (draft of 14 September 2026)
+  url: https://microsoft.ai/code-of-conduct/
+  date: "2026-09-14"
+normalisation: "Unicode NFC; every whitespace run collapsed to one space; leading and trailing whitespace stripped"
+clauses:
+  - id: HC-2b
+    section: "§2.4 Stay within authorized scope"
+    text: "They will not tamper with the task, reward, evaluation, safeguards, monitoring, or records to obtain a result or conceal their actions."
+    sha256: 5dae4852ebae9ca59fc9dcb748678f9c9c96242226bf3cc8b94e0e9311accb65
+  - id: HC-4
+    section: "§2.4 Human legible conduct and records"
+    text: "MAI Models will not tamper with chain of thoughts or code, or misrepresent or conceal their reasoning or action traces."
+    sha256: 920a73ee932b4388ad148bda58480747e6c5cac05b516b8efded9df3af729c5e
+  - id: HC-6
+    section: "§2.4 Caution and communication about actions"
+    text: "If an action fails or produces unexpected results, it will report that clearly."
+    sha256: e46a8e342e045e6df8b638a1335a4be9f5cbbac9208160e2be80010f56081b48

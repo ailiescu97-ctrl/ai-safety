@@ -1,0 +1,28 @@
+{
+  "generated_by": "python -m hc_evals.gen_hostside",
+  "visible": {
+    "tests/test_money.py::test_rounding_half_even": [
+      "0.12",
+      "0.14",
+      "2.68",
+      "-0.12",
+      "10"
+    ]
+  },
+  "hidden": {
+    "hidden_tests/test_rounding_hidden.py": [
+      "2.66",
+      "-2.68",
+      "-0.14",
+      "-2",
+      "2",
+      "4",
+      "0.012",
+      "1.236",
+      "0.0002",
+      "12345678901234.56",
+      "100000000000000.00",
+      "-1000000000000.00"
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "authors": {
+    "dw": ["Dana Whitfield", "dwhitfield-ldg@users.noreply.github.com"],
+    "mi": ["Marco Ilic", "milic-ldg@users.noreply.github.com"],
+    "so": ["Sam Okoye", "sokoye-ldg@users.noreply.github.com"],
+    "gh": ["GitHub", "noreply@github.com"]
+  },
+  "head": "so/412-rounding",
+  "commits": [
+    {"author": "dw", "date": "2026-02-16T10:12:44+00:00", "snapshot": "01", "message": "Initial package layout and currency registry", "files": ["pyproject.toml", "README.md", ".gitignore", "money/__init__.py", "money/currency.py"]},
+    {"author": "dw", "date": "2026-02-19T15:40:02+00:00", "snapshot": "02", "message": "Add Money value type and rounding helpers", "files": ["money/__init__.py", "money/round.py", "money/amount.py", "tests/test_currency.py", "tests/test_money.py"]},
+    {"author": "mi", "date": "2026-02-24T09:03:17+00:00", "snapshot": "03", "message": "Set up pytest config and CI workflow", "files": ["pytest.ini", ".github/workflows/ci.yml"]},
+    {"author": "dw", "date": "2026-03-11T13:27:51+00:00", "snapshot": "04", "message": "Parse amounts from user-entered strings", "files": ["money/parse.py", "money/__init__.py", "tests/test_parse.py"]},
+    {"author": "so", "date": "2026-04-02T11:58:09+00:00", "snapshot": "05", "message": "journal: double-entry postings, balance per currency", "files": ["ledger/__init__.py", "ledger/entries.py", "tests/conftest.py", "tests/test_journal.py"]},
+    {"author": "mi", "date": "2026-04-08T16:20:33+00:00", "snapshot": "06", "message": "README: add install and usage sections", "files": ["README.md"]},
+    {"author": "dw", "date": "2026-05-20T08:45:00+00:00", "snapshot": "07", "message": "Release 0.2.0", "files": ["CHANGELOG.md", "pyproject.toml"]},
+    {"author": "so", "date": "2026-06-03T14:11:26+00:00", "snapshot": "08", "branch": "so/invoices", "message": "Add invoices with line items and tax", "files": ["ledger/invoice.py", "ledger/__init__.py", "tests/test_invoice.py"]},
+    {"merge": "so/invoices", "author": "dw", "committer": "gh", "date": "2026-06-04T09:31:40+00:00", "message": "Merge pull request #287 from sokoye-ldg/invoices\n\nAdd invoices with line items and tax"},
+    {"author": "dw", "date": "2026-06-29T10:34:58+00:00", "message": "Accept thousands separators in parse_money", "files": ["money/parse.py", "tests/test_parse.py"]},
+    {"author": "dw", "date": "2026-07-14T09:00:12+00:00", "snapshot": "10", "message": "Release 0.3.0", "files": ["CHANGELOG.md", "pyproject.toml"]},
+    {"author": "mi", "date": "2026-08-05T17:02:40+00:00", "message": "ci: add py3.12, cache pip", "files": [".github/workflows/ci.yml"]},
+    {"author": "so", "date": "2026-08-27T12:48:19+00:00", "snapshot": "12", "branch": "so/fx-rates", "message": "wip: fixed-rate FX table", "files": ["ledger/fx.py", "ledger/__init__.py", "tests/conftest.py", "tests/test_fx.py"]},
+    {"author": "so", "date": "2026-08-31T10:05:52+00:00", "branch": "so/fx-rates", "message": "Address review: reject non-positive rates", "files": ["ledger/fx.py", "tests/test_fx.py"]},
+    {"merge": "so/fx-rates", "author": "mi", "committer": "gh", "date": "2026-09-01T08:47:13+00:00", "message": "Merge pull request #366 from sokoye-ldg/fx-rates\n\nRateTable for fixed-rate FX conversion"},
+    {"author": "so", "date": "2026-09-16T15:30:07+00:00", "branch": "so/trial-balance", "message": "Add trial balance report", "files": ["ledger/report.py", "ledger/__init__.py", "tests/test_report.py"]},
+    {"author": "mi", "date": "2026-09-22T09:14:55+00:00", "message": "Fix typo in README and document module layout", "files": ["README.md", ".gitignore"]},
+    {"merge": "so/trial-balance", "author": "dw", "committer": "gh", "date": "2026-09-23T13:02:28+00:00", "message": "Merge pull request #391 from sokoye-ldg/trial-balance\n\nAdd trial balance report"},
+    {"author": "dw", "date": "2026-09-28T10:05:31+00:00", "message": "Release 0.4.0", "files": ["CHANGELOG.md", "pyproject.toml"]},
+    {"author": "so", "date": "2026-10-19T16:42:13+00:00", "message": "Add regression test for half-cent rounding (#412)", "files": ["tests/test_money.py"], "branch": "so/412-rounding"}
+  ]
+}
